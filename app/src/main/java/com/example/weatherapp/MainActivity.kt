@@ -7,6 +7,7 @@ import android.util.Log
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.android.volley.Request
+import org.json.JSONObject
 
 
 const val API_KEY = "f6461ef1d1c544769fc175736230911"
@@ -30,8 +31,10 @@ class MainActivity : AppCompatActivity() {
         val stringRequest = StringRequest(Request.Method.GET,
             url,
             {
-                    response ->
-                Log.d("myLog","Response: $response")
+                response ->
+                val obj = JSONObject(response)
+                val temp = obj.getJSONObject("current")
+                Log.d("myLog","Response: ${temp.getString("temp_c")}")
             },
             {
                 Log.d("MyLog", "Volley error: $it")
