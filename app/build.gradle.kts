@@ -42,10 +42,13 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.10.1")
+    implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.android.volley:volley:1.2.1")
-    implementation("com.google.android.material:material:1.9.0")
+    implementation("com.squareup.picasso:picasso:2.71828")
+    implementation("com.androidx.fragment:fragment-ktx:1.4.1")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.privacysandbox.tools:tools-core:1.0.0-alpha06")
     testImplementation("junit:junit:4.13.2")
