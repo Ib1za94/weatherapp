@@ -21,5 +21,6 @@ class MainFragment : Fragment() {
 
     companion object {
         fun newInstance() = MainFragment()
+        val a = 10
     }
 }
