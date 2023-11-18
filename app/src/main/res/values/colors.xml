@@ -2,5 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="card_menu">#9CC9BA3A</color>
+    <color name="card_menu">#4B03A9F4</color>
+    <color name="yelow">#DDCE67</color>
 </resources>

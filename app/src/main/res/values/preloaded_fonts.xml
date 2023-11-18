@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/aguafina_script</item>
         <item>@font/akaya_telivigala</item>
+        <item>@font/andika</item>
+        <item>@font/atomic_age</item>
+        <item>@font/montserrat_subrayada</item>
+        <item>@font/raleway</item>
+        <item>@font/zilla_slab</item>
+        <item>@font/zilla_slab_highlight</item>
     </array>
 </resources>
