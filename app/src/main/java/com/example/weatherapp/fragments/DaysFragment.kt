@@ -20,6 +20,6 @@ class DaysFragment : Fragment() {
     companion object {
 
         @JvmStatic
-        fun newInstance = DaysFragment()
+        fun newInstance() = DaysFragment()
     }
 }
