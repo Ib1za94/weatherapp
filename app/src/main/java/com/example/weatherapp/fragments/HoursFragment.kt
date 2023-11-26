@@ -22,5 +22,6 @@ class HoursFragment : Fragment() {
 
         @JvmStatic
         fun newInstance() = HoursFragment()
+        var biba
     }
 }
