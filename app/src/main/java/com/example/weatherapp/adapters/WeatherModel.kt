@@ -11,5 +11,4 @@ data class WeatherModel(
     val minTemp: String,
     val imageUrl: String,
     val hours: String
-    val pedik: String
 )
