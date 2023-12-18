@@ -89,7 +89,6 @@ class MainFragment : Fragment() {
             }
         )
         queue.add(request)
-        val piska
     }
 
     companion object {
