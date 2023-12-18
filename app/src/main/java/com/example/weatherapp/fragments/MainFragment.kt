@@ -82,13 +82,14 @@ class MainFragment : Fragment() {
             Request.Method.GET,
             url,
             {
-                result -> Log.d("RequestSuccess", "Result: $result")
+                result -> Log.d("MyLog", "Result: $result")
             },
             {
-                error -> Log.d("RequestError", "Error: $error")
+                error -> Log.d("MyLog", "Error: $error")
             }
         )
         queue.add(request)
+        val piska
     }
 
     companion object {
