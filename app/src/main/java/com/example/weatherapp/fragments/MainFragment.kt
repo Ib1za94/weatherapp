@@ -98,7 +98,7 @@ class MainFragment : Fragment() {
         val mainObject = JSONObject(result)
         val item = WeatherModel(
             mainObject.getJSONObject("location").getString("name"),
-            mainObject.getJSONObject("current").getString("last_update"),
+            mainObject.getJSONObject("current").getString("last_updated"),
             mainObject.getJSONObject("current")
                 .getJSONObject("condition").getString("text"),
             mainObject.getJSONObject("current").getString("temp_c"),
@@ -109,10 +109,10 @@ class MainFragment : Fragment() {
             ""
         )
         Log.d("MyLog", "City: ${item.city}")
-        Log.d("MyLog", "Time : ${item.time}")
+        Log.d("MyLog", "Time: ${item.time}")
         Log.d("MyLog", "Condition: ${item.condition}")
         Log.d("MyLog", "Temp: ${item.currentTemp}")
-        Log.d("MyLog", "URL: ${item.imageUrl}")
+        Log.d("MyLog", "Url: ${item.imageUrl}")
     }
 
     companion object {
