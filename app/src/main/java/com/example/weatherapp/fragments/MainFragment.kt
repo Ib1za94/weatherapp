@@ -16,8 +16,11 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.weatherapp.R
 import com.example.weatherapp.adapters.VpAdapter
+import com.example.weatherapp.adapters.WeatherModel
 import com.example.weatherapp.databinding.FragmentMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import org.json.JSONObject
+
 const val API_KEY = "f6461ef1d1c544769fc175736230911"
 
 class MainFragment : Fragment() {
@@ -47,48 +50,69 @@ class MainFragment : Fragment() {
         requestWeatherData("Kyiv")
     }
 
-    private fun init() = with(binding){
+    private fun init() = with(binding) {
         val adapter = VpAdapter(activity as FragmentActivity, flist)
         vp.adapter = adapter
-        TabLayoutMediator(tabLayout, vp){
-            tab, post -> tab.text = tList[post]
+        TabLayoutMediator(tabLayout, vp) { tab, post ->
+            tab.text = tList[post]
         }.attach()
     }
 
-    private fun permissionListener(){
+    private fun permissionListener() {
         pLauncher = registerForActivityResult(
-            ActivityResultContracts.RequestPermission()){
+            ActivityResultContracts.RequestPermission()
+        ) {
             Toast.makeText(activity, "Permission is $it", Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun checkPermission(){
-        if(!isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)){
+    private fun checkPermission() {
+        if (!isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)) {
             permissionListener()
             pLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
     }
 
-    private fun requestWeatherData(city: String){
-    val url = "https://api.weatherapi.com/v1/forecast.json?key=" +
-            API_KEY +
-            "&q=" +
-            city +
-            "&days=" +
-            "3" +
-            "&aqi=no&alerts=no\n"
+    private fun requestWeatherData(city: String) {
+        val url = "https://api.weatherapi.com/v1/forecast.json?key=" +
+                API_KEY +
+                "&q=" +
+                city +
+                "&days=" +
+                "3" +
+                "&aqi=no&alerts=no\n"
         val queue = Volley.newRequestQueue(context)
         val request = StringRequest(
             Request.Method.GET,
             url,
-            {
-                result -> Log.d("MyLog", "Result: $result")
+            { result -> parseWeatherData(result)
             },
-            {
-                error -> Log.d("MyLog", "Error: $error")
+            { error ->
+                Log.d("MyLog", "Error: $error")
             }
         )
         queue.add(request)
+    }
+
+    private fun parseWeatherData(result: String) {
+        val mainObject = JSONObject(result)
+        val item = WeatherModel(
+            mainObject.getJSONObject("location").getString("name"),
+            mainObject.getJSONObject("current").getString("last_update"),
+            mainObject.getJSONObject("current")
+                .getJSONObject("condition").getString("text"),
+            mainObject.getJSONObject("current").getString("temp_c"),
+            "",
+            "",
+            mainObject.getJSONObject("current")
+                .getJSONObject("condition").getString("icon"),
+            ""
+        )
+        Log.d("MyLog", "City: ${item.city}")
+        Log.d("MyLog", "Time : ${item.time}")
+        Log.d("MyLog", "Condition: ${item.condition}")
+        Log.d("MyLog", "Temp: ${item.currentTemp}")
+        Log.d("MyLog", "URL: ${item.imageUrl}")
     }
 
     companion object {
