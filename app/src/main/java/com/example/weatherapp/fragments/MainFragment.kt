@@ -28,6 +28,7 @@ class MainFragment : Fragment() {
     private val flist = listOf(
         HoursFragment.newInstance(),
         DaysFragment.newInstance()
+        val bitch
     )
     private val tList = listOf(
         "Hours",
