@@ -11,14 +11,17 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.activityViewModels
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.weatherapp.MainViewModel
 import com.example.weatherapp.R
 import com.example.weatherapp.adapters.VpAdapter
 import com.example.weatherapp.adapters.WeatherModel
 import com.example.weatherapp.databinding.FragmentMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.internal.SynchronizedObject
 import org.json.JSONObject
 
@@ -35,6 +38,7 @@ class MainFragment : Fragment() {
     )
     private lateinit var pLauncher: ActivityResultLauncher<String>
     private lateinit var binding: FragmentMainBinding
+    private val model: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,6 +52,7 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         checkPermission()
         init()
+        updateCurrentCard()
         requestWeatherData("Kyiv")
     }
 
@@ -57,6 +62,18 @@ class MainFragment : Fragment() {
         TabLayoutMediator(tabLayout, vp) { tab, post ->
             tab.text = tList[post]
         }.attach()
+    }
+
+    private fun updateCurrentCard() = with(binding){
+        model.liveDataCurrent.observe(viewLifecycleOwner){
+            val maxMenTemp = "${it.maxTemp}°C/${it.minTemp}°C"
+            tvDate.text = it.time
+            tvCity.text = it.city
+            tvTemp.text = it.currentTemp
+            tvCondition.text = it.condition
+            tvMaxMin.text = maxMenTemp
+            Picasso.get().load("https:" + it.imageUrl).into(imWeather)
+        }
     }
 
     private fun permissionListener() {
@@ -137,6 +154,7 @@ class MainFragment : Fragment() {
                 .getJSONObject("condition").getString("icon"),
             weatherItem.hours
         )
+        model.liveDataCurrent.value = item
         Log.d("MyLog", "City: ${item.maxTemp}")
         Log.d("MyLog", "Time: ${item.minTemp}")
         Log.d("MyLog", "Time: ${item.hours}")
