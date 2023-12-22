@@ -35,7 +35,6 @@ class MainFragment : Fragment() {
     )
     private lateinit var pLauncher: ActivityResultLauncher<String>
     private lateinit var binding: FragmentMainBinding
-    val oleglox
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
