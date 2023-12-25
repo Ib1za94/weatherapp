@@ -29,7 +29,7 @@ class DaysFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         init()
         model.liveDataList.observe(viewLifecycleOwner){
-            adapter.submitList(it)
+            adapter.submitList(it.subList(1, it.size))
         }
     }
 
