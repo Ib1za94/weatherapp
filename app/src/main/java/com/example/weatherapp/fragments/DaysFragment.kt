@@ -16,6 +16,7 @@ class DaysFragment : Fragment() {
     private lateinit var adapter: WeatherAdapter
     private lateinit var binding: FragmentDaysBinding
     private val model: MainViewModel by activityViewModels()
+    private val pisechka
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
