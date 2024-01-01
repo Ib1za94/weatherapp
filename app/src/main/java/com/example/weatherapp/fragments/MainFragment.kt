@@ -104,6 +104,7 @@ class MainFragment : Fragment() {
             tvCondition.text = it.condition
             tvMaxMin.text = if(it.currentTemp.isEmpty()) "" else maxMinTemp
             Picasso.get().load("https:" + it.imageUrl).into(imWeather)
+            val pisia
         }
     }
 
