@@ -27,7 +27,6 @@ class WeatherAdapter(val listener: Listener?) : ListAdapter<WeatherModel, Weathe
             tvCondition.text = item.condition
             tvTemp.text = item.currentTemp.ifEmpty { "${item.maxTemp}°C / ${item.minTemp}°C" }
             Picasso.get().load("https:" + item.imageUrl).into(im)
-            val pisia
         }
     }
 
