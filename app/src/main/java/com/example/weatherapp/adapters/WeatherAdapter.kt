@@ -18,6 +18,7 @@ class WeatherAdapter(val listener: Listener?) : ListAdapter<WeatherModel, Weathe
         init{
             itemView.setOnClickListener{
                 itemTemp?.let { it1 -> listener?.onClick(it1) }
+                val tolik
             }
         }
 
