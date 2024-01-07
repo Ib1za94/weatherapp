@@ -5,7 +5,13 @@
         <item>@font/akaya_telivigala</item>
         <item>@font/andika</item>
         <item>@font/atomic_age</item>
+        <item>@font/barlow</item>
+        <item>@font/barlow_black</item>
+        <item>@font/barlow_bold</item>
+        <item>@font/barlow_light</item>
+        <item>@font/barlow_medium</item>
         <item>@font/montserrat_subrayada</item>
+        <item>@font/oswald_medium</item>
         <item>@font/raleway</item>
         <item>@font/zilla_slab</item>
         <item>@font/zilla_slab_highlight</item>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="3dp"
-    android:backgroundTint="#56B6A932"
+    android:backgroundTint="#7AC7F3FA"
     app:cardCornerRadius="5dp"
     app:cardElevation="0dp">
 
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/atomic_age"
+            android:fontFamily="@font/barlow_medium"
             android:text="Monday 04/12/23"
             android:textColor="@color/black"
             android:textSize="16sp"
@@ -32,9 +32,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:fontFamily="@font/atomic_age"
+            android:fontFamily="@font/barlow_medium"
             android:text="Sunny"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvDate"
             app:layout_constraintTop_toBottomOf="@+id/tvDate" />
@@ -52,7 +52,7 @@
             android:id="@+id/tvTemp"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:fontFamily="@font/atomic_age"
+            android:fontFamily="@font/barlow_bold"
             android:gravity="center"
             android:text="21°C"
             android:textColor="@color/white"
