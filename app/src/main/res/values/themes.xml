@@ -10,5 +10,10 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="fontFamily">@font/barlow_bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
     <style name="Theme.WeatherApp" parent="Base.Theme.WeatherApp" />
 </resources>
