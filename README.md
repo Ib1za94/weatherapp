@@ -2,7 +2,7 @@
 
 <details><summary><b>App screenshots:</b></summary>
 ![photo_2024-01-08_16-24-13](https://github.com/Ib1za94/weatherapp/assets/132717217/98621a1f-f453-4b83-b1e7-6c003868f5ab)
-![photo_2024-01-08_16-24-17](https://github.com/Ib1za94/weatherapp/assets/132717217/ca77b767-4bf7-4612-bfa8-994b5a4a9e12)
+![photo_2024-01-08_16-24-17](https://github.com/Ib1za94/weatherapp/assets/132717217/ca77b767-4bf7-4612-bfa8-994b5a4a9e12)</details>details>
 
 ### About Project
 <em>Weather App with few features for skill demonstration.</em>
