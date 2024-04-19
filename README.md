@@ -5,7 +5,7 @@
   <img src="https://github.com/Ib1za94/weatherapp/assets/132717217/98621a1f-f453-4b83-b1e7-6c003868f5ab"></details>
 
 ### About Project 🔎
-<em>Weather App with few features for skill demonstration.</em>
+<em>Weather application for Android. Used Kotlin, Volley, XML for UI, RecyclerView, MVVM.</em>
 
 ### Installation instructions 📀
 <em>Just download APK-file if you have phone with Android operating system.</em>
